@@ -1,0 +1,15 @@
+{
+  "name": "Tropic Merge",
+  "short_name": "Tropic Merge",
+  "description": "A tropical merge game. Match three crops to grow them into bigger bundles.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1b9aaa",
+  "theme_color": "#1b9aaa",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

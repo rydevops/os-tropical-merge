@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Tropic Merge</title>
+<meta name="description" content="A tropical merge game. Match three crops to grow them into bigger bundles.">
+<meta name="theme-color" content="#1b9aaa">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tropic Merge">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="title">Tropic Merge</div>
+<div id="hud">
+  <button id="btn-music" aria-label="Toggle music" title="Music &amp; ocean">&#127925;</button>
+  <button id="btn-sfx" aria-label="Toggle sound effects" title="Sound effects">&#128266;</button>
+  <button id="btn-center" aria-label="Recenter island" title="Recenter">&#129517;</button>
+  <button id="btn-reset" aria-label="Start over" title="Start over">&#8635;</button>
+</div>
+
+<div id="confirm" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="confirm-text">
+    <p id="confirm-text">Start over with a fresh island? Your current progress will be lost.</p>
+    <div class="row">
+      <button id="confirm-no" type="button">Keep playing</button>
+      <button id="confirm-yes" type="button" class="danger">Start over</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<div id="infobar"></div>
+
+<noscript><p style="position:fixed;inset:0;margin:auto;color:#fff;text-align:center;padding-top:40vh">Tropic Merge needs JavaScript.</p></noscript>
+<script src="game.js"></script>
+</body>
+</html>
