@@ -1,7 +1,7 @@
 /* Tropic Merge service worker: makes the game playable offline.
    All paths are relative so it works from a GitHub Pages sub-path (user.github.io/repo/).
    Bump CACHE_VERSION whenever you publish new files so players get the update. */
-const CACHE_VERSION = 'tropic-merge-v2';
+const CACHE_VERSION = 'tropic-merge-v3';
 const ASSETS = [
   './',
   './index.html',

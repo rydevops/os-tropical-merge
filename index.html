@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Tropic Merge</title>
-<meta name="description" content="A tropical merge game. Match three crops to grow them into bigger bundles.">
+<meta name="description" content="A tropical merge game. Match three crops to grow them into bigger bundles. Free, no purchases.">
 <meta name="theme-color" content="#1b9aaa">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -19,11 +19,46 @@
 <canvas id="game"></canvas>
 
 <div id="title">Tropic Merge</div>
+<div id="stats">
+  <button id="pill-lvl" class="pill lvl" data-act="open" data-a="level" aria-label="Level"><span id="lv-num">1</span><span class="xp"><i id="lv-fill"></i></span></button>
+  <button id="pill-en" class="pill" data-act="open" data-a="energy" aria-label="Energy">&#9889; <b id="en-val">20/20</b><small id="en-sub">full</small></button>
+  <div class="pill" aria-label="Coins">&#129689; <b id="coin-val">0</b></div>
+  <div class="pill" aria-label="Pearls">&#129450; <b id="pearl-val">0</b></div>
+</div>
 <div id="hud">
-  <button id="btn-music" aria-label="Toggle music" title="Music &amp; ocean">&#127925;</button>
-  <button id="btn-sfx" aria-label="Toggle sound effects" title="Sound effects">&#128266;</button>
-  <button id="btn-center" aria-label="Recenter island" title="Recenter">&#129517;</button>
-  <button id="btn-reset" aria-label="Start over" title="Start over">&#8635;</button>
+  <button id="btn-center" data-act="center" aria-label="Recenter map" title="Recenter">&#129517;</button>
+  <button id="btn-menu" data-act="open" data-a="menu" aria-label="Menu" title="Menu">&#9881;&#65039;</button>
+</div>
+<button id="tracker" data-act="nav" data-a="quests" hidden></button>
+
+<div id="dock">
+  <div id="actions" hidden></div>
+  <div id="infobar"></div>
+</div>
+
+<nav id="nav" aria-label="Game menu">
+  <button id="nav-orders" data-act="nav" data-a="orders"><span class="ic">&#128203;</span><span class="lb">Orders</span><i class="badge"></i></button>
+  <button id="nav-quests" data-act="nav" data-a="quests"><span class="ic">&#128220;</span><span class="lb">Quests</span><i class="badge"></i></button>
+  <button id="nav-work" data-act="nav" data-a="work"><span class="ic">&#128296;</span><span class="lb">Workshop</span><i class="badge"></i></button>
+  <button id="nav-daily" data-act="nav" data-a="daily"><span class="ic">&#128197;</span><span class="lb">Daily</span><i class="badge"></i></button>
+  <button id="nav-season" data-act="nav" data-a="season"><span class="ic">&#127958;&#65039;</span><span class="lb">Season</span><i class="badge"></i></button>
+  <button id="nav-event" data-act="nav" data-a="event"><span class="ic">&#127754;</span><span class="lb">Event</span><i class="badge"></i></button>
+</nav>
+
+<div id="sheet" hidden>
+  <div id="sheet-scrim"></div>
+  <section class="panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <header><h2 id="sheet-title"></h2><button data-act="close" aria-label="Close">&#10005;</button></header>
+    <div id="sheet-body"></div>
+  </section>
+</div>
+
+<div id="modal" hidden>
+  <div class="card" role="dialog" aria-modal="true">
+    <div class="head"><div id="modal-portrait" hidden></div><h3 id="modal-title"></h3></div>
+    <div id="modal-body"></div>
+    <div id="modal-btns"></div>
+  </div>
 </div>
 
 <div id="confirm" hidden>
@@ -37,7 +72,6 @@
 </div>
 
 <div id="toast"></div>
-<div id="infobar"></div>
 
 <noscript><p style="position:fixed;inset:0;margin:auto;color:#fff;text-align:center;padding-top:40vh">Tropic Merge needs JavaScript.</p></noscript>
 <script src="game.js"></script>
